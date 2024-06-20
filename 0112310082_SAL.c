@@ -17,15 +17,13 @@ int main()
        printf("\n\nEnter choice: ");
        scanf("%d", &choice);
 
-
        if(choice==1)
        {
             printf("\nEnter the index to print: ");
             scanf("%d", &pos);
             printf("\nThe val at index %d: %d", pos, arr[pos]);
        }
-
-
+	       
        else if(choice==2)
        {
             printf("\nEnter the index to update: ");
@@ -36,7 +34,6 @@ int main()
             printf("The new val at index %d: %d", pos, arr[pos]);
        }
 
-
        else if(choice==3)
        {
             ///WRITE CODE OF LINEAR SEARCH
@@ -44,22 +41,16 @@ int main()
             flag = 0;
             printf("\nEnter the value to search: ");
             scanf("%d",&s_val);
-            for (i = 0; i < n; i++)
-            {
-                if (arr[i]==s_val)
-                {
-                    printf("Value %d found at index %d\n", s_val, i);
+            for (i=0; i<n; i++){
+                if (arr[i]==s_val){
+                    printf("Value %d found at index %d\n",s_val,i);
                     flag = 1;
                     break;
                 }
             }
-            if (!flag)
-            {
-                printf("Value %d not found in the array\n", s_val);
+            if (!flag){
+                printf("Value %d not found in the array\n",s_val);
             }
-
-
-
        }
 
        else if(choice==4)
@@ -69,23 +60,18 @@ int main()
             printf("\nEnter the position (index) to insert: ");
             scanf("%d", &pos);
 
-
             ///WRITE CODE OF INSERTION
 
-            if (pos>=0&&pos<n)
-            {
-                for (i=n-1; i>pos; i--)
-                {
+            if (pos>=0&&pos<n){
+                for (i=n-1; i>pos; i--){
                     arr[i]= arr[i-1];
                 }
                 arr[pos]=new_val;
                 printf("Value %d inserted at index %d\n",new_val,pos);
             }
-            else
-            {
-                printf("\nInvalid index!\n");
+            else{
+                printf("\ninvalid index!\n");
             }
-
        }
 
        else if(choice==5)
@@ -95,18 +81,15 @@ int main()
 
             ///WRITE CODE FOR DELETION (OPTIONAL, BUT YOU'LL GET BONUS MARKS)
 
-            if (pos >= 0 && pos < n)
-            {
-                for (i = pos; i < n - 1; i++)
-                {
-                    arr[i]=arr[i + 1];
+            if (pos>=0 && pos<n){
+                for (i=pos; i<n-1; i++){
+                    arr[i]=arr[i+1];
                 }
-                arr[n - 1] = 0; // Optional: Reset last element to zero
-                printf("Value at index %d deleted\n", pos);
+                arr[n-1] = 0; 
+                printf("value at index %d delete\n", pos);
             }
-            else
-            {
-                printf("\nInvalid index!\n");
+            else{
+                printf("\ninvalid index!\n");
             }
         }
 
@@ -117,7 +100,6 @@ int main()
             printf("\nWrong Choice. Enter again.\n\n");
             goto err;
         }
-
     }
     return 0;
 }
